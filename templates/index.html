@@ -1,0 +1,53 @@
+<!-- templates/index.html -->
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Face Emotion Detector</title>
+</head>
+<body>
+  <h1>Face Emotion Detector</h1>
+
+  {% with messages = get_flashed_messages() %}
+    {% if messages %}
+      <ul>
+      {% for msg in messages %}
+        <li style="color: red;">{{ msg }}</li>
+      {% endfor %}
+      </ul>
+    {% endif %}
+  {% endwith %}
+
+  {% if result_message %}
+    <h2>Hi {{ name }} — {{ detected }}</h2>
+    <p>{{ result_message }}</p>
+  {% endif %}
+
+  <form action="/" method="post" enctype="multipart/form-data">
+    <label>
+      Full Name:<br>
+      <input type="text" name="name" required>
+    </label>
+    <br><br>
+    <label>
+      Email:<br>
+      <input type="email" name="email" required>
+    </label>
+    <br><br>
+    <label>
+      Extra Info (optional):<br>
+      <input type="text" name="extra">
+    </label>
+    <br><br>
+    <label>
+      Upload a photo:<br>
+      <input type="file" name="image" accept="image/*" required>
+    </label>
+    <br><br>
+    <button type="submit">Submit</button>
+  </form>
+
+  <hr>
+  <small>Note: Image will be processed locally and stored in database.db.</small>
+</body>
+</html>

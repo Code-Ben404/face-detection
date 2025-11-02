@@ -1,0 +1,27 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual env
+venv/
+.env
+env/
+
+# IDE/editor
+.vscode/
+.idea/
+.DS_Store
+
+# Local folders / DB / uploads
+uploads/
+database.db
+*.sqlite3
+
+# Model / large artifacts: track with LFS if needed
+*.h5
+*.hdf5
+
+# Mac/Windows files
+Thumbs.db
