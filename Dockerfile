@@ -30,4 +30,6 @@ COPY . /app
 EXPOSE 5000
 
 # Command to start your Flask app
-CMD ["gunicorn", "app:app", "--bind", "0.0.0.0:5000", "--workers", "2"]
+# replace previous CMD with this
+CMD ["gunicorn", "app:app", "--bind", "0.0.0.0:5000", "--workers", "1", "--threads", "2", "--timeout", "120"]
+
